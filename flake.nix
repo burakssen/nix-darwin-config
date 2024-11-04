@@ -5,23 +5,30 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
       configuration = { pkgs, config, ... }: {
         nixpkgs.config.allowUnfree = true;
+
         environment.systemPackages = [
           pkgs.neovim
           pkgs.docker
           pkgs.mkalias
           pkgs.cmake
+          pkgs.oh-my-zsh
         ];
+
         
         fonts.packages = [
           (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
         ];
         
-        environment.systemPath = [ "/opt/homebrew/bin" ];
+        environment.systemPath = [ "/opt/homebrew/bin" "~/.local/bin" ];
         
         homebrew = {
           enable = true;
@@ -34,6 +41,13 @@
             "btop"
             "llvm"
             "node"
+            "curl"
+            "grep"
+            "aria2"
+            "ffmpeg"
+            "git"
+            "fzf"
+            "yt-dlp"
           ];
           casks = [
             "iina"
@@ -53,15 +67,18 @@
             "zen-browser"
             "datagrip"
             "microsoft-teams"
-            #"quitme"
             "zoom"
             "sf-symbols"
             "appcleaner"
+            "quitme"
+            "artixgamelauncher"
+            "ani-cli"
+            "surfshark"
           ];
 
-          #taps = [
-          #  "burakssen/cask"
-          #];
+          taps = [
+            "burakssen/cask"
+          ];
        
           onActivation = {
             autoUpdate = true;
