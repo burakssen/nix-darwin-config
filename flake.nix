@@ -46,6 +46,10 @@
             "mos"
             "jordanbaird-ice"
             "spotify"
+            "clion"
+            "zed"
+            "zen-browser"
+            "${builtins.toString /Users/burakssen/.config/nix/casks/quitme.rb}"
           ];
           masApps = {
             "WhatsApp" = 310633997;
@@ -57,7 +61,11 @@
             "AdGuard" = 1440147259;
             "Slack" = 803453959;
           };
-          onActivation.cleanup = "zap";
+          onActivation = {
+            autoUpdate = true;
+            cleanup = "zap";
+            upgrade = true;
+          };
         };
 
         system.activationScripts.applications.text = let
