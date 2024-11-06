@@ -10,6 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
       configuration = { pkgs, config, ... }: {
@@ -23,7 +24,10 @@
           pkgs.oh-my-zsh
         ];
 
-        
+        programs.zsh = {
+          enable = true;  
+        };
+
         fonts.packages = [
           (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
         ];
@@ -74,7 +78,21 @@
             "artixgamelauncher"
             "ani-cli"
             "surfshark"
+            "grandperspective"
+            "postman"
           ];
+
+          masApps = {
+            "Amphetamine" = 937984704;
+            "WhatsApp" = 310633997;
+            "Telegram" = 747648890;
+            "Slack" = 803453959;
+            "Xcode" = 497799835;
+            "Microsoft Word" = 462054704;
+            "Microsoft Excel" = 462058435;
+            "Microsoft PowerPoint" = 462062816;
+            "AdGuard for Safari" = 1440147259;
+          };
 
           taps = [
             "burakssen/cask"
