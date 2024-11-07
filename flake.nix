@@ -5,13 +5,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
     let
       configuration = { pkgs, config, ... }: {
         nixpkgs.config.allowUnfree = true;
@@ -22,6 +18,7 @@
           pkgs.mkalias
           pkgs.cmake
           pkgs.oh-my-zsh
+          pkgs.home-manager
         ];
 
         programs.zsh = {
@@ -80,6 +77,7 @@
             "surfshark"
             "grandperspective"
             "postman"
+            "orbstack"
           ];
 
           masApps = {
