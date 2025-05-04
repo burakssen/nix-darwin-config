@@ -80,6 +80,13 @@
           jnoortheen.nix-ide
           catppuccin.catppuccin-vsc-icons
           github.github-vscode-theme
+          ms-python.python
+          ms-python.debugpy
+          ms-python.vscode-pylance
+          ms-vscode.cpptools
+          ms-vscode.cpptools-extension-pack
+          github.copilot
+          github.copilot-chat
         ];
         userSettings = {
           "editor.formatOnSave" = true;
