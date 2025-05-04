@@ -14,6 +14,7 @@
     let
       configuration = { pkgs, config, ... }: {
         nixpkgs.config.allowUnfree = true;
+        
         environment.systemPackages = [
           pkgs.neovim
           pkgs.mkalias
@@ -23,6 +24,7 @@
           pkgs.ctop
           pkgs.nixfmt-rfc-style
         ];
+
         homebrew = {
           enable = true;
           casks = [
@@ -38,6 +40,7 @@
             "surfshark"
           ];
           brews = [
+            "gh"
             "mas"
             "zig"
           ];
@@ -51,9 +54,11 @@
           };
           onActivation.cleanup = "zap";
         };
+
         fonts.packages = [
           pkgs.nerd-fonts.jetbrains-mono
         ];
+
         nix.settings.experimental-features = "nix-command flakes";
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 6;

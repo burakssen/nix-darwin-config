@@ -51,7 +51,7 @@
   # Package installations
   home.packages = with pkgs; [
     git
-    htop
+    btop
     fzf
     bat
     ripgrep
