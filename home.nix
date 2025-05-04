@@ -83,8 +83,6 @@
           ms-python.python
           ms-python.debugpy
           ms-python.vscode-pylance
-          ms-vscode.cpptools
-          ms-vscode.cpptools-extension-pack
           github.copilot
           github.copilot-chat
         ];
