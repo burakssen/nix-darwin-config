@@ -79,6 +79,7 @@
               "Microsoft Excel" = 462058435;
               "AdGuard For Safari" = 1440147259;
               "Slack For Desktop" = 803453959;
+              "XCode" = 497799835;
             };
             onActivation.cleanup = "zap";
           };

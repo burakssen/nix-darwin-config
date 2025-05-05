@@ -88,6 +88,7 @@
           "editor.fontLigatures" = true;
           "workbench.iconTheme" = "catppuccin-mocha";
           "workbench.colorTheme" = "GitHub Dark Default";
+          "zig.zls.enabled" = true;
         };
       };
     };
