@@ -49,11 +49,27 @@
               "miniconda"
               "surfshark"
               "hammerspoon"
+              "multipass"
+              "zulip"
             ];
             brews = [
               "gh"
               "mas"
               "zig"
+              "openjdk"
+              "java"
+              "mvn"
+              "curl"
+              "grep"
+              "aria2"
+              "ffmpeg"
+              "git"
+              "fzf"
+              "yt-dlp"
+              "yabai"
+            ];
+            taps = [
+              "koekeishiya/formulae"
             ];
             masApps = {
               "WhatsApp" = 310633997;
@@ -62,6 +78,7 @@
               "Microsoft PowerPoint" = 462062816;
               "Microsoft Excel" = 462058435;
               "AdGuard For Safari" = 1440147259;
+              "Slack For Desktop" = 803453959;
             };
             onActivation.cleanup = "zap";
           };
@@ -94,7 +111,6 @@
                 ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
               done
             '';
-
         };
     in
     {
