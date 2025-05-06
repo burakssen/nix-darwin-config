@@ -66,10 +66,6 @@
               "git"
               "fzf"
               "yt-dlp"
-              "yabai"
-            ];
-            taps = [
-              "koekeishiya/formulae"
             ];
             masApps = {
               "WhatsApp" = 310633997;

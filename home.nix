@@ -40,6 +40,7 @@
       initContent = ''
         # Any additional custom zsh configuration can go here
         export PATH=$HOME/.local/bin:$PATH
+        export PATH=$HOME/.docker/bin:$PATH
         export ZSH_CUSTOM=$ZSH/custom
       '';
       # Set aliases
